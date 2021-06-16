@@ -1,0 +1,12 @@
+# Short SH script which lets me look up Mandarin words in the terminal whilst watching Mandarin-language TV in another window.
+# Step 1: Download a copy of the CC-CEDICT dictionary file and save somewhere https://www.mdbg.net/chinese/dictionary?page=cc-cedict
+# Step 2: Change /path/to/cedict to its real location
+# Step 3: 
+
+while true
+do
+	read var1
+	grep "$var1" "/path/to/cedict" | cut -d " " -f 2- | colout "^.*$" rainbow
+	printf -- "-%.0s" $(seq $(tput cols))
+       printf "\n"
+done
