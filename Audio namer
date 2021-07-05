@@ -1,0 +1,9 @@
+#!/bin/bash
+
+for filename in $(ls);
+        do mpv "$filename"
+        echo "What word is it? \n"
+        read word
+        cutogg=$(echo "$filename" | cut -d "." -f 1)
+        mv "$filename" "$cutogg-$word.ogg"
+done
