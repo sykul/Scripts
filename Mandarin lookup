@@ -6,7 +6,7 @@
 while true
 do
 	read var1
-	grep "$var1" "/path/to/cedict" | cut -d " " -f 2- | colout "^.*$" rainbow
+	grep "$var1" "/path/to/cedict" | cut -d " " -f 2- | sort -t "[" -k 2 | colout "^.*$" rainbow
 	printf -- "-%.0s" $(seq $(tput cols))
-       printf "\n"
+        printf "\n"
 done
