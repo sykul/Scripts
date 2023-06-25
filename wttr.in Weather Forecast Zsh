@@ -1,11 +1,9 @@
-# To be placed in ~/.zshrc 
-# Get a weather forecast for any town by calling "weather ANY-TOWN"
-# Replace "YOUR-TOWN" with your own town and the function will default to that town if "weather" is called with no argument
-
-alias upgrade="sudo apt update; sudo apt upgrade"
-function weather(){
-    if [[ ! -z "$1" ]]
-        then curl wttr.in/"$1"
-    else curl "wttr.in/YOUR-TOWN"
-    fi
+weather () {
+	if [[ ! -z "$1" ]]
+	then
+		encoded_location=$(printf "%s" "$1" | jq -s -R -r @uri) 
+		curl "wttr.in/$encoded_location"
+	else
+		curl "wttr.in/st-pierre-de-maille"
+	fi
 }
