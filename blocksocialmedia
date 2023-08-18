@@ -1,0 +1,7 @@
+#!/usr/bin/bash
+
+sudo sed -i 's/#\+0\.0\.0\.0\ twitter\.com/0\.0\.0\.0 twitter\.com/' /etc/hosts
+sudo sed -i 's/#\+0\.0\.0\.0\ reddit\.com/0\.0\.0\.0 reddit\.com/' /etc/hosts
+sudo sed -i 's/#\+0\.0\.0\.0\ www\.reddit\.com/0\.0\.0\.0 www\.reddit\.com/' /etc/hosts
+sudo sed -i 's/#\+0\.0\.0\.0\ facebook\.com/0\.0\.0\.0 facebook\.com/' /etc/hosts
+sudo sed -i 's/#\+0\.0\.0\.0\ www\.facebook\.com/0\.0\.0\.0 www\.facebook\.com/' /etc/hosts
