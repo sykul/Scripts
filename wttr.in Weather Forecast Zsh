@@ -4,6 +4,6 @@ weather () {
 		encoded_location=$(printf "%s" "$1" | jq -s -R -r @uri) 
 		curl "wttr.in/$encoded_location"
 	else
-		curl "wttr.in/st-pierre-de-maille"
+		curl "wttr.in/[your-default-location]"
 	fi
 }
